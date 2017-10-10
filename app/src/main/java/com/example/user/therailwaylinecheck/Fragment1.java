@@ -19,7 +19,7 @@ public class Fragment1 extends Fragment {
       public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
       }
-
+//////123123
       @Override
       public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
             //นำ XML Layout ที่จะใช้คู่กัน  มาใช้เป็นโครงร่างของ Fragment นี้
