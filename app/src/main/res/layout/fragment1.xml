@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:padding="5dp"
+        android:text="เริ่มค้นหาเส้นทาง"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="เดินทางจาก :"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="40dp"
+        android:padding="10dp"
+        android:text="ไปยัง            :"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <AutoCompleteTextView
+        android:id="@+id/AutoCompTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="40dp"
+        android:hint="(ระบุสถานีต้นทาง)"
+        android:inputType="text"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:completionThreshold="1" />
+
+    <AutoCompleteTextView
+        android:id="@+id/AutoCompTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/AutoCompTextView1"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="40dp"
+        android:hint="(ระบุสถานีปลายทาง)"
+        android:inputType="text"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="18sp"
+        android:completionThreshold="1" />
+
+
+    <Button
+        android:id="@+id/Button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="210dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="210dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="280dp"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:text="ค้นหา" />
+
+    <Button
+        android:id="@+id/Button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginEnd="40dp"
+        android:layout_marginLeft="210dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginStart="210dp"
+        android:layout_marginTop="280dp"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:text="ต่อสถานี" />
+</RelativeLayout>
