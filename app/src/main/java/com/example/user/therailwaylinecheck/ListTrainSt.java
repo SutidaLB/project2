@@ -7,12 +7,14 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
 import static com.example.user.therailwaylinecheck.R.string.app_name;
 
 public class ListTrainSt extends AppCompatActivity {
+      String station1,station2;
       @Override
       protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -20,9 +22,6 @@ public class ListTrainSt extends AppCompatActivity {
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle(app_name);
             setSupportActionBar(toolbar);
-
-            Intent intent = getIntent();
-
 
             /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
             fab.setOnClickListener(new View.OnClickListener() {
@@ -32,6 +31,15 @@ public class ListTrainSt extends AppCompatActivity {
                                 .setAction("Action", null).show();
                   }
             });*/
+            Intent intent = getIntent();
+            //station1 = intent.getExtras().getString("station1");
+            station1 = intent.getExtras().getString("station1");
+            station2 = intent.getExtras().getString("station2");
+            final TextView s1 = (TextView)findViewById(R.id.Dstation1);
+            final TextView s2 = (TextView)findViewById(R.id.Dstation2);
+
+            s1.setText(station1);
+            s2.setText(station2);
 
             ArrayList<MyItem> items = new ArrayList<>();
             String line1;
@@ -43,7 +51,7 @@ public class ListTrainSt extends AppCompatActivity {
             MyAdapter adapter = new MyAdapter(getBaseContext(),
                     R.layout.item_layout, items);
 
-            ListView listView = (ListView)findViewById(R.id.listView);
+            ListView listView = (ListView)findViewById(R.id.selectst);
             listView.setAdapter(adapter);
 
 

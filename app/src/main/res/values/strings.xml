@@ -2,4 +2,6 @@
     <string name="app_name">The railway line check</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_find_all_st">find_all_st</string>
+    <string name="title_activity_find__all__station">Find_All_Station</string>
 </resources>

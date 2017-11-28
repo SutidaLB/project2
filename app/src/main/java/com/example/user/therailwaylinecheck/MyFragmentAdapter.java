@@ -24,8 +24,6 @@ public class MyFragmentAdapter extends FragmentStatePagerAdapter {
             }
       }
 
-
-
       @Override
       public CharSequence getPageTitle(int position) {
             String[] tabs = {"หน้าหลัก", "รายการ", "อื่นๆ"};   //รายชื่อแท็บ

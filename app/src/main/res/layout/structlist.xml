@@ -14,21 +14,58 @@
     tools:showIn="@layout/listtrainst">
 
     <ListView
-        android:id="@+id/listView"
-        android:layout_width="wrap_content"
+        android:id="@+id/selectst"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="50dp" />
+        android:layout_below="@+id/to"
+        android:layout_marginTop="21dp" />
 
     <TextView
         android:id="@+id/Dstation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="เดินทางจาก  xxx - xxx"
-        android:textColor="@color/colorPrimary"
-        android:textSize="18sp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="เดินทางจาก"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/to"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Dstation"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text=" ไปยัง "
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/Dstation1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/to"
+        android:layout_alignTop="@+id/to"
+        android:layout_toLeftOf="@+id/Dstation"
+        android:layout_toStartOf="@+id/Dstation"
+        android:text=" - "
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/Dstation2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/to"
+        android:layout_alignTop="@+id/to"
+        android:layout_toEndOf="@+id/Dstation"
+        android:layout_toRightOf="@+id/Dstation"
+        android:text=" - "
+        android:textColor="@color/colorPrimary"
+        android:textSize="17sp" />
+
+
 </RelativeLayout>
