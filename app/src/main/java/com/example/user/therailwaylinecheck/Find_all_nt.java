@@ -64,7 +64,7 @@ public class Find_all_nt extends AppCompatActivity {
        // ArrayList<HashMap<String,String>> result = MysqlConnector.selectAllT_station();
         //String[] thStation = new String[result.size()];
 
-        ArrayList<HashMap<String,String>> result_route1 = MysqlConnectoTrain_line.selectAllT_train_line();// เราต้องดึงส่วนของ Route ใช่ป่าว ใช่ๆ
+        ArrayList<HashMap<String,String>> result_route1 = MysqlConnectoTrain_line.selectAllT_train_line();
 
         ArrayList<HashMap<String,String>> result_route2 = MysqlConnectoTrain_type.selectAllT_train_type();
 
