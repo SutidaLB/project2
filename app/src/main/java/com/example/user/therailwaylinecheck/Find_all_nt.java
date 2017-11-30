@@ -10,21 +10,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
 
 public class Find_all_nt extends AppCompatActivity {
     String no_trian,line_train,type_train;
     public AutoCompleteTextView all_line_train,all_type_train,all_no_train;
     public ArrayAdapter<String> adapter_line_nt,adapter_type_nt,adapter_no_nt;
-    public TextView t_1,t_2,t_3;
-
-
-    String test;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +26,6 @@ public class Find_all_nt extends AppCompatActivity {
         setContentView(R.layout.find_all_nt);
 
         Intent intent = getIntent();
-
-        List< String > list = new ArrayList< String >( );
-
-        list.add ( "Blue" );
-
-        list.add ( "Green" );
-
-        list.add ( "Brown" );
 
        /* ArrayAdapter < String > dataAdapter = new ArrayAdapter < String > (getBaseContext(), android.R.layout.simple_dropdown_item_1line, list );
 
@@ -55,11 +41,6 @@ public class Find_all_nt extends AppCompatActivity {
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        //t_1 = (TextView)findViewById(R.id.t1);
-        //t_2 = (TextView)findViewById(R.id.t2);
-        //t_3 = (TextView)findViewById(R.id.t3);
-
-
 
        // ArrayList<HashMap<String,String>> result = MysqlConnector.selectAllT_station();
         //String[] thStation = new String[result.size()];
@@ -76,8 +57,6 @@ public class Find_all_nt extends AppCompatActivity {
         String[] Th_all_train = new String[result_route3.size()];
         String[] Type_all_train = new String[result_route2.size()];
         String[] Line_all_train = new String[result_route1.size()];
-
-        // แพรวๆ  database มันดึงไม่ได้อยู่อ่ะ
 
         //for(int i = 0;i<result.size();i++){
          //   thStation[i] = result.get(i).get("name_th");
@@ -98,14 +77,6 @@ public class Find_all_nt extends AppCompatActivity {
 
         }
 
-
-
-        t_1 = (TextView)findViewById(R.id.t1);
-        //t_2 = (TextView)findViewById(R.id.t2);
-        //t_3 = (TextView)findViewById(R.id.t3);
-
-
-
         all_line_train = (AutoCompleteTextView)findViewById(R.id.autoComp_line);
         adapter_line_nt = new ArrayAdapter<>(getBaseContext(),android.R.layout.simple_dropdown_item_1line,Line_all_train);
         all_line_train.setAdapter(adapter_line_nt);
@@ -115,8 +86,6 @@ public class Find_all_nt extends AppCompatActivity {
             }
         });
 
-
-        t_1.setText(adapter_line_nt.getItem(0));
         all_type_train = (AutoCompleteTextView)findViewById(R.id.autoComp_type);
         adapter_type_nt = new ArrayAdapter<>(getBaseContext(),android.R.layout.simple_dropdown_item_1line, Type_all_train);
         all_type_train.setAdapter(adapter_type_nt);
@@ -136,14 +105,6 @@ public class Find_all_nt extends AppCompatActivity {
                 no_trian = all_no_train.getText().toString();
             }
         });
-
-
-        t_1.setText(adapter_no_nt.getItem(0));
-
-
-
-
-
 
 
         //test = allline_train.getText().toString();
