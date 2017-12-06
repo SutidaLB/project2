@@ -75,7 +75,9 @@ public class Fragment1 extends Fragment {
             button2.setOnClickListener(new View.OnClickListener() {
                   @Override
                   public void onClick(View v) {
-                        Intent intent = new Intent(getContext(), ListTrainSt.class);
+                        Intent intent = new Intent(getContext(), ListTrainSt2.class);
+                        intent.putExtra("station1", station1);
+                        intent.putExtra("station2", station2);
                         startActivity(intent);
                   }
             });

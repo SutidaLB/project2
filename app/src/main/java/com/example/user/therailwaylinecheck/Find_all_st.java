@@ -23,10 +23,8 @@ public class Find_all_st extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.find_all_st);
 
-        //super.onCreate(savedInstanceState);
         Intent intent = getIntent();
 
-        //str = intent.getExtras().getString("bomkiki");
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -53,7 +51,7 @@ public class Find_all_st extends AppCompatActivity {
         }
 
         allstation = (AutoCompleteTextView)findViewById(R.id.autoCompleteTextView);
-        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,  Th_all_train);
+        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line, thStation);
         allstation.setAdapter(adapter);
 
         allstation.setOnItemClickListener(new AdapterView.OnItemClickListener() {

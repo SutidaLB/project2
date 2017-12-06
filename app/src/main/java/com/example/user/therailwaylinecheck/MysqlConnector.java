@@ -57,6 +57,7 @@ public class MysqlConnector {
                 t_station.put("name_en", jo.get("name_en").toString());
                 t_station.put("name_th", jo.get("name_th").toString());
                 t_station.put("distance", jo.get("distance").toString());
+
                 Log.e("test",jo.get("name_en").toString());
                 list.add(t_station);
             }

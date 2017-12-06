@@ -9,16 +9,16 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class MyAdapter extends ArrayAdapter {
+public class MyAdapter2 extends ArrayAdapter {
       private Context mContext;
-      private ArrayList<MyItem> mArrayList;
+      private ArrayList<MyItem2> mArrayList;
       private int mLayout;
 
       //คอนสตรักเตอร์สำหรับรับข้อมูลเข้ามาในคลาส
       //MyItem คือคลาสที่สร้างไว้ในขั้นตอนก่อนนี้ โดยข้อมูลต่างๆ จะถูกกำหนดให้แก่คลาส MyItem
       //แล้วคลาส MyItem จะถูกกำหนดให้เป็นชนิดข้อมูลของ ArrayList เพื่อที่จะนำข้อมูลมาใส่ลงในรายการของ ListView
-     public MyAdapter(Context context, int layout,
-                      ArrayList<MyItem> arrayList ) {
+     public MyAdapter2(Context context, int layout,
+                       ArrayList<MyItem2> arrayList ) {
 
             super(context, layout, arrayList);
             mContext = context;
@@ -40,10 +40,10 @@ public class MyAdapter extends ArrayAdapter {
             }
             //สร้างอินสแตนซ์เพื่อใช้อ้างถึงวิวที่เราใช้จัดโครงร่างของรายการของ ListView
             //ซึ่งวิวเหล่านี้เราได้เพิ่มเราได้วางลงใน Layout แล้วในขั้นตอนก่อนนี้ (ในที่นี้คือไฟล์ item_layout.xml)
-            TextView textViewLine1 = (TextView) rowView.findViewById(R.id.Station);
-            TextView textViewLine2 = (TextView) rowView.findViewById(R.id.NumTrain);
-            TextView textViewLine3 = (TextView) rowView.findViewById(R.id.TrainType);
-            TextView textViewLine4 = (TextView) rowView.findViewById(R.id.mtime);
+            TextView textViewLine1 = (TextView) rowView.findViewById(R.id.showStation2);
+            TextView textViewLine2 = (TextView) rowView.findViewById(R.id.showNumTrain2);
+            TextView textViewLine3 = (TextView) rowView.findViewById(R.id.showTrainType2);
+            TextView textViewLine4 = (TextView) rowView.findViewById(R.id.showmtime2);
             //อ่านข้อมูลบรรทัดที่ 1 ที่เรากำหนดให้แก่คลาส MyItem จากเมธอด getTextLine1()
             //นำข้อมูลที่ได้ไปกำหนดเป็นข้อมูลบรรทัดแรกของรายการในลำดับนั้น (position)
 
@@ -58,9 +58,6 @@ public class MyAdapter extends ArrayAdapter {
 
           String textLine4 = mArrayList.get(position).getMtime();
           textViewLine4.setText(textLine4);
-
-
-
 
             return rowView; //ส่งรายการของ ListView แถวนั้นกลับไป
       }

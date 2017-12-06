@@ -5,17 +5,17 @@
     android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable">
 
     <TextView
-        android:id="@+id/time"
+        android:id="@+id/mtime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="เวลาออก-เวลาถึง"
-        android:textSize="12sp"
         android:layout_alignBaseline="@+id/Station"
         android:layout_alignBottom="@+id/Station"
-        android:layout_alignRight="@+id/ticked"
-        android:layout_alignEnd="@+id/ticked"
+        android:layout_alignEnd="@+id/mticked"
+        android:layout_alignRight="@+id/mticked"
+        android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:layout_marginEnd="12dp" />
+        android:text="เวลาออก-เวลาถึง"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/Station"
@@ -33,16 +33,16 @@
         android:id="@+id/NumTrain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/mticked"
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
         android:text="เลขขบวนรถไฟ"
-        android:textSize="14sp"
-        android:layout_alignTop="@+id/ticked"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:textSize="14sp" />
 
     <Button
-        android:id="@+id/ticked"
+        android:id="@+id/mticked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -60,7 +60,7 @@
         android:id="@+id/TrainType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ticked"
+        android:layout_alignBottom="@+id/mticked"
         android:layout_alignLeft="@+id/NumTrain"
         android:layout_alignStart="@+id/NumTrain"
         android:text="ประเถทรถไฟ"

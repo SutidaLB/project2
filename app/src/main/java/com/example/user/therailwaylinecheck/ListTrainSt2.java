@@ -14,7 +14,7 @@ import java.util.HashMap;
 
 import static com.example.user.therailwaylinecheck.R.string.app_name;
 
-public class ListTrainSt extends AppCompatActivity {
+public class ListTrainSt2 extends AppCompatActivity {
       String station1,station2;
       int num1=0,num2=0,num=0,num3=0;
       String Stmp,Ntmp;
@@ -26,7 +26,7 @@ public class ListTrainSt extends AppCompatActivity {
       @Override
       protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.listtrainst);
+            setContentView(R.layout.listtrainst2);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             toolbar.setTitle(app_name);
             setSupportActionBar(toolbar);
@@ -44,8 +44,8 @@ public class ListTrainSt extends AppCompatActivity {
             station1 = intent.getExtras().getString("station1"); // สถานี 1
             station2 = intent.getExtras().getString("station2"); // สถานี 2
 
-            final TextView s1 = (TextView)findViewById(R.id.Dstation1);
-            final TextView s2 = (TextView)findViewById(R.id.Dstation2);
+            final TextView s1 = (TextView)findViewById(R.id.sstation1);
+            final TextView s2 = (TextView)findViewById(R.id.sstation2);
 
             s1.setText(station1);
             s2.setText(station2);
@@ -62,7 +62,7 @@ public class ListTrainSt extends AppCompatActivity {
             ArrayList<HashMap<String,String>> result_route5 = MysqlConnectSchedule.selectAllT_schedule();
 
             /*
-               งานที่เสร็จแล้ว
+               งานที่เสร็๗แล้ว
                         1.สร้าง ข้อมูลของหน้า MyItem พร้อมใช้งาน
 
 
@@ -78,7 +78,11 @@ public class ListTrainSt extends AppCompatActivity {
                         3.ยังมีงานอีกเยอะ วันที่ 8 จะทันพรีเซ้นมั๊ย
                         4.สู้ๆ ทันแน่นอน ถ้าตั้งใจ อิอิ
                         5.งานอื่นเยอะจัง ทำไม่ทันละ 55555++++
-                        เวลานี้ 6.33น ณ วันที่ 1 ธันวาคม 2560
+                        6. ณ เวลานี้ พะแอ้วนั่งร้องเพลงสบายใจเฉิบ การบ้านวิชา Internet Engineering ก็ยังไม่เสดเลย
+                        7. บอมกำลังบ่นอยู่นะตอนนี้ อิอิ เผื่อผ่านเข้ามาอ่าน
+                        8.ปล. คนป่วยอะไรแม่งดีดฉิบหาย 5555555555555++++++++++++
+                        9.ปล.2 เวลานี้ 6.33น ณ วันที่ 1 ธันวาคม 2560
+
              */
 
             String[] time = new String[result_route1.size()];
@@ -96,8 +100,6 @@ public class ListTrainSt extends AppCompatActivity {
             String[] arrived = new String[result_route5.size()];
             String[] departed = new String[result_route5.size()];
             String[] sort = new String[result_route5.size()];
-
-
 
 
 
@@ -237,7 +239,7 @@ public class ListTrainSt extends AppCompatActivity {
 
                                     }
                               }
-                              //Station1 = Stmp.split(" ")[0];
+                              Station1 = Stmp.split(" ")[0];
                               if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j])){
                                     NumTrain_tmp[num] = Ntmp;
                                     /*for(int k=0;k<Station.length;k++){
@@ -250,9 +252,7 @@ public class ListTrainSt extends AppCompatActivity {
                                     //NumTrain_tmp[num] = route1_on_tmp[i];
                                     for(int k=0;k<NumTrain.length;k++){//เพิ่มส่วนแสดง ชนิด รถไฟ Train_Type
                                           if(NumTrain[k].equals(NumTrain_tmp[num])){
-
                                                 NumTrainType_tmp[num] = NumTrainType[k];
-
                                           }
                                     }
                                     departed_tmp[num] = departed1_tmp[i];
@@ -312,7 +312,7 @@ public class ListTrainSt extends AppCompatActivity {
             ///// End Pull Database  //////////////
 
 
-            ArrayList<MyItem> items = new ArrayList<>();
+            ArrayList<MyItem2> items = new ArrayList<>();
             String line1,line2,line3,line4;
             line1 = "Test";
             //MyItem test = new MyItem(line1);
@@ -320,16 +320,16 @@ public class ListTrainSt extends AppCompatActivity {
             for(int i = 1; i <= Station_tmp.length; i++) {
 
                   //items.add(new MyItem("รหัสสถานี = " + Station1_id_tmp[i-1],"route_id = " +route1_id_tmp[i-1],"route_no = " + route1_on_tmp[i-1],line1));
-                  items.add(new MyItem(Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
+                  items.add(new MyItem2(Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
             }
 
            //s1.setText("---"+ Station1 + "---" + Stmp + "---");
             //s1.setText(t[0].replaceAll(".*-", "")); // วิธีตัดคำข้างหน้าออก
             //s1.setText(t[0].split("-")[0]); // วิธีตัดคำข้างหลังออก
             //ใช้ MyAdapter ที่เราสร้างขึ้น  แทนคลาส ArrayAdapter ที่เคยใช้ตามปกติ
-            MyAdapter adapter = new MyAdapter(getBaseContext(),R.layout.item_layout, items);
+            MyAdapter2 adapter = new MyAdapter2(getBaseContext(),R.layout.item_layout2, items);
 
-            ListView listView = (ListView)findViewById(R.id.selectst);
+            ListView listView = (ListView)findViewById(R.id.selectst2);
             listView.setAdapter(adapter);
 
 
