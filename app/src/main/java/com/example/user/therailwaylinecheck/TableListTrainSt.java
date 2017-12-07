@@ -120,8 +120,6 @@ public class TableListTrainSt extends AppCompatActivity {
 
             ListView listView = (ListView)findViewById(R.id.list_show_table);
             listView.setAdapter(adapter);
-
-
             /*
             //จบส่วนของการค้นหาสถานี
 
