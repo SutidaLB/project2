@@ -33,9 +33,9 @@
         android:id="@+id/showStation3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/showmtime3"
-        android:layout_alignEnd="@+id/showNumTrain2"
-        android:layout_alignRight="@+id/showNumTrain2"
+        android:layout_alignLeft="@+id/showTrainType2"
+        android:layout_alignStart="@+id/showTrainType2"
+        android:layout_alignTop="@+id/showmtime3"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="16sp" />

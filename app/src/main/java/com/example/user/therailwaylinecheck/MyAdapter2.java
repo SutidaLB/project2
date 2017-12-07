@@ -44,20 +44,36 @@ public class MyAdapter2 extends ArrayAdapter {
             TextView textViewLine2 = (TextView) rowView.findViewById(R.id.showNumTrain2);
             TextView textViewLine3 = (TextView) rowView.findViewById(R.id.showTrainType2);
             TextView textViewLine4 = (TextView) rowView.findViewById(R.id.showmtime2);
+          TextView textViewLine5 = (TextView) rowView.findViewById(R.id.showStation3);
+          TextView textViewLine6 = (TextView) rowView.findViewById(R.id.showNumTrain3);
+          TextView textViewLine7 = (TextView) rowView.findViewById(R.id.showTrainType3);
+          TextView textViewLine8 = (TextView) rowView.findViewById(R.id.showmtime3);
             //อ่านข้อมูลบรรทัดที่ 1 ที่เรากำหนดให้แก่คลาส MyItem จากเมธอด getTextLine1()
             //นำข้อมูลที่ได้ไปกำหนดเป็นข้อมูลบรรทัดแรกของรายการในลำดับนั้น (position)
 
-            String textLine1 = mArrayList.get(position).getmStation();
-            textViewLine1.setText(textLine1);
+          String textLine1 = mArrayList.get(position).getmStation2();
+          textViewLine1.setText(textLine1);
 
-          String textLine2 = mArrayList.get(position).getmNumTrain();
+          String textLine2 = mArrayList.get(position).getmNumTrain2();
           textViewLine2.setText(textLine2);
 
-          String textLine3 = mArrayList.get(position).getmTrainType();
+          String textLine3 = mArrayList.get(position).getmTrainType2();
           textViewLine3.setText(textLine3);
 
-          String textLine4 = mArrayList.get(position).getMtime();
+          String textLine4 = mArrayList.get(position).getMtime2();
           textViewLine4.setText(textLine4);
+
+          String textLine5 = mArrayList.get(position).getmStation3();
+          textViewLine5.setText(textLine5);
+
+          String textLine6 = mArrayList.get(position).getmNumTrain3();
+          textViewLine6.setText(textLine6);
+
+          String textLine7 = mArrayList.get(position).getmTrainType3();
+          textViewLine7.setText(textLine7);
+
+          String textLine8 = mArrayList.get(position).getMtime3();
+          textViewLine8.setText(textLine8);
 
             return rowView; //ส่งรายการของ ListView แถวนั้นกลับไป
       }

@@ -16,7 +16,7 @@ import java.util.HashMap;
 
 
 public class Find_all_nt extends AppCompatActivity {
-    String no_trian,line_train,type_train;
+    String line_train,no_trian,type_train;
     public AutoCompleteTextView all_line_train,all_type_train,all_no_train;
     public ArrayAdapter<String> adapter_line_nt,adapter_type_nt,adapter_no_nt;
     @Override
@@ -26,18 +26,6 @@ public class Find_all_nt extends AppCompatActivity {
         setContentView(R.layout.find_all_nt);
 
         Intent intent = getIntent();
-
-       /* ArrayAdapter < String > dataAdapter = new ArrayAdapter < String > (getBaseContext(), android.R.layout.simple_dropdown_item_1line, list );
-
-        AutoCompleteTextView autocomplete = ( AutoCompleteTextView ) this.findViewById ( R.id.autoComp_line );
-
-        autocomplete.setAdapter ( dataAdapter );*/
-
-
-        //super.onCreate(savedInstanceState);
-
-        //Intent intent = getIntent();
-        //str = intent.getExtras().getString("bomkiki");
 
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
@@ -51,16 +39,11 @@ public class Find_all_nt extends AppCompatActivity {
 
         ArrayList<HashMap<String,String>> result_route3 = MysqlConnectRoute.selectAllT_route();
 
-
-
         String[] No_all_train = new String[result_route3.size()];
         String[] Th_all_train = new String[result_route3.size()];
         String[] Type_all_train = new String[result_route2.size()];
         String[] Line_all_train = new String[result_route1.size()];
 
-        //for(int i = 0;i<result.size();i++){
-         //   thStation[i] = result.get(i).get("name_th");
-        //}
         for(int i = 0;i<result_route1.size();i++){
 
             Line_all_train[i] = result_route1.get(i).get("name_th"); //ขบวน
@@ -95,8 +78,6 @@ public class Find_all_nt extends AppCompatActivity {
             }
         });
 
-
-
         all_no_train = (AutoCompleteTextView)findViewById(R.id.autoComp_no);
         adapter_no_nt = new ArrayAdapter<>(getBaseContext(),android.R.layout.simple_dropdown_item_1line, No_all_train);
         all_no_train.setAdapter(adapter_no_nt);
@@ -105,7 +86,6 @@ public class Find_all_nt extends AppCompatActivity {
                 no_trian = all_no_train.getText().toString();
             }
         });
-
 
         //test = allline_train.getText().toString();
        // t_1.setText(adapter_line_nt.getItem());
@@ -123,45 +103,7 @@ public class Find_all_nt extends AppCompatActivity {
         });
         */
 
-
-
-
-
-
-
-
-
-
-
-        /*
-
-        allline_train = (AutoCompleteTextView)findViewById(R.id.autoComp_line);
-        adapter_line_nt = new ArrayAdapter<>(getBaseContext(),android.R.layout.simple_dropdown_item_1line, Line_alltrain);
-        allline_train.setAdapter(adapter_line_nt);
-        allline_train.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long rowId) {
-                line_train = allline_train.getText().toString();
-            }
-        });
-        alltype_train = (AutoCompleteTextView)findViewById(R.id.autoComp_type);
-         adapter_type_nt = new ArrayAdapter<>(getBaseContext(),android.R.layout.simple_dropdown_item_1line, Type_alltrain);
-        alltype_train.setAdapter(adapter_type_nt);
-        alltype_train.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long rowId) {
-                type_train = alltype_train.getText().toString();
-            }
-        });
-        allno_train = (AutoCompleteTextView)findViewById(R.id.autoComp_no);
-        adapter_no_nt = new ArrayAdapter<>(getBaseContext(),android.R.layout.simple_dropdown_item_1line, No_alltrain);
-        allno_train.setAdapter(adapter_no_nt);
-        allno_train.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long rowId) {
-                no_trian = allno_train.getText().toString();
-            }
-        });*/
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

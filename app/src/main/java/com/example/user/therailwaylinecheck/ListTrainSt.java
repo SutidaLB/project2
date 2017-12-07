@@ -18,8 +18,6 @@ public class ListTrainSt extends AppCompatActivity {
       String station1,station2;
       int num1=0,num2=0,num=0,num3=0;
       String Stmp,Ntmp;
-      //public AutoCompleteTextView all_line_train,all_type_train,all_no_train;
-      //public ArrayAdapter<String> adapter_line_nt,adapter_type_nt,adapter_no_nt;
 
       String Station1,Station2,NumTrain,TrainType,NumTrainType,time;
       int Station1_id,Station2_id;
@@ -31,16 +29,7 @@ public class ListTrainSt extends AppCompatActivity {
             toolbar.setTitle(app_name);
             setSupportActionBar(toolbar);
 
-            /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                  @Override
-                  public void onClick(View view) {
-                        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                  }
-            });*/
             Intent intent = getIntent();
-            //station1 = intent.getExtras().getString("station1");
             station1 = intent.getExtras().getString("station1"); // สถานี 1
             station2 = intent.getExtras().getString("station2"); // สถานี 2
 
@@ -52,34 +41,10 @@ public class ListTrainSt extends AppCompatActivity {
 
              //  Pull  Database ///////////
             ArrayList<HashMap<String,String>> result_route1 = MysqlConnectoTrain_line.selectAllT_train_line();
-
             ArrayList<HashMap<String,String>> result_route2 = MysqlConnectoTrain_type.selectAllT_train_type();
-
             ArrayList<HashMap<String,String>> result_route3 = MysqlConnectRoute.selectAllT_route();
-
             ArrayList<HashMap<String,String>> result_route4 = MysqlConnector.selectAllT_station();
-
             ArrayList<HashMap<String,String>> result_route5 = MysqlConnectSchedule.selectAllT_schedule();
-
-            /*
-               งานที่เสร็จแล้ว
-                        1.สร้าง ข้อมูลของหน้า MyItem พร้อมใช้งาน
-
-
-               สิ่งที่ต้องทำต่อ  1.สร้างตัวแปรเก็บข้อมูล
-                        2.ดึงข้อมูลมาเก็บในตัวแปร
-                        3.เขียนอัลกอการดึงข้อมูลเฉพาะ station1 และ station2  นำมาเปรียบเทียบ
-                        4.ส่งไปแสดงใน MyItem
-
-               สิ่งที่สงสัย
-                        1.จะเอาเวลา(Time)มาแสดงยังใง แล้วเวลาคำนวณจากใหน
-                        2.ยังไม่ทำ POP UP ของปุ่ม
-
-                        3.ยังมีงานอีกเยอะ วันที่ 8 จะทันพรีเซ้นมั๊ย
-                        4.สู้ๆ ทันแน่นอน ถ้าตั้งใจ อิอิ
-                        5.งานอื่นเยอะจัง ทำไม่ทันละ 55555++++
-                        เวลานี้ 6.33น ณ วันที่ 1 ธันวาคม 2560
-             */
 
             String[] time = new String[result_route1.size()];
             String[] TrainType = new String[result_route2.size()];
@@ -96,21 +61,6 @@ public class ListTrainSt extends AppCompatActivity {
             String[] arrived = new String[result_route5.size()];
             String[] departed = new String[result_route5.size()];
             String[] sort = new String[result_route5.size()];
-
-
-
-
-
-            String[] main_st_id = new String[238];
-            String[] main_route_id = new String[238];
-            String[] main_route_no = new String[238];
-
-
-
-
-            //for(int i = 0;i<result.size();i++){
-            //   thStation[i] = result.get(i).get("name_th");
-            //}
             for(int i = 0;i<result_route5.size();i++){
 
                   Station_id[i] = result_route5.get(i).get("station_id"); //ขบวน
@@ -122,7 +72,6 @@ public class ListTrainSt extends AppCompatActivity {
             }
 
             for(int i = 0;i<result_route4.size();i++){ // Station_table
-
                   Station_St[i] = result_route4.get(i).get("name_th"); //ขบวน
                  // route_id[i] = result_route4.get(i).get("route_id");
                  // route_no[i] = result_route4.get(i).get("route_no");
@@ -172,7 +121,6 @@ public class ListTrainSt extends AppCompatActivity {
             String[] departed1_tmp = new String[num1];
             String[] sort1_tmp = new String[num1];
 
-
             String[] Station2_id_tmp = new String[num2];
             String[] route2_id_tmp = new String[num2];
             String[] route2_on_tmp = new String[num2];
@@ -212,7 +160,6 @@ public class ListTrainSt extends AppCompatActivity {
 
                                     }
                               }
-                              //Station1 = Stmp.split(" ")[0];
                               if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j])) {
                                     num++;
                               }
@@ -237,80 +184,25 @@ public class ListTrainSt extends AppCompatActivity {
 
                                     }
                               }
-                              //Station1 = Stmp.split(" ")[0];
                               if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j])){
                                     NumTrain_tmp[num] = Ntmp;
-                                    /*for(int k=0;k<Station.length;k++){
-                                          if(NumTrain_tmp[num].equals(NumTrain[k])){
-                                                Station_tmp[num] = Station[k];
-                                          }
-                                    }*/
                                     Station_tmp[num] = Stmp;
-                                    //Station_tmp[num]= Station_St[Integer.parseInt(Station1_id_tmp[i])-1] + " - " + Station_St[Integer.parseInt(Station2_id_tmp[j])-1];
-                                    //NumTrain_tmp[num] = route1_on_tmp[i];
                                     for(int k=0;k<NumTrain.length;k++){//เพิ่มส่วนแสดง ชนิด รถไฟ Train_Type
                                           if(NumTrain[k].equals(NumTrain_tmp[num])){
-
                                                 NumTrainType_tmp[num] = NumTrainType[k];
-
                                           }
                                     }
                                     departed_tmp[num] = departed1_tmp[i];
                                     arrived_tmp[num] = arrived2_tmp[j];
-
-
                                     num++;
                               }
 
                         }
                   }
             }
-
-
-
-            // code เก่า
-           /* for(int i=0;i<Station.length;i++){
-                  Station1 = Station[i].split(" ")[0];
-                  Station2 = Station[i].replaceAll(".*- ", "");
-                  num1 = station1.length();
-                  num2 = Station2.length();
-
-                  if(station1.equals(Station1) &&  station2.equals(Station2)){
-                        num++;
-                  }
-            }
-
-            num = 0;
-            for(int i=0;i<Station.length;i++){
-                  Station1 = Station[i].split(" ")[0];
-                  Station2 = Station[i].replaceAll(".*- ", "");
-                  num1 = station1.length();
-                  num2 = Station2.length();
-
-                  if(station1.equals(Station1) &&  station2.equals(Station2)){
-                       Station_tmp[num] = Station[i];
-                       NumTrain_tmp[num] = NumTrain[i];
-                       NumTrainType_tmp[num] = NumTrainType[i];
-                       num++;
-                  }
-
-            }*/
-            // จบ Code เก่า
-
-
-
-
-
-
-
-
-
-
-
             //จบส่วนของการค้นหาสถานี
 
             ///// End Pull Database  //////////////
-
 
             ArrayList<MyItem> items = new ArrayList<>();
             String line1,line2,line3,line4;
@@ -318,9 +210,8 @@ public class ListTrainSt extends AppCompatActivity {
             //MyItem test = new MyItem(line1);
 
             for(int i = 1; i <= Station_tmp.length; i++) {
-
-                  //items.add(new MyItem("รหัสสถานี = " + Station1_id_tmp[i-1],"route_id = " +route1_id_tmp[i-1],"route_no = " + route1_on_tmp[i-1],line1));
-                  items.add(new MyItem(Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
+                  
+                  items.add(new MyItem(i+ ":  "+Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
             }
 
            //s1.setText("---"+ Station1 + "---" + Stmp + "---");
@@ -334,10 +225,6 @@ public class ListTrainSt extends AppCompatActivity {
 
 
       }
-
-
-
-
 
       @Override
       public boolean onCreateOptionsMenu(Menu menu) {
