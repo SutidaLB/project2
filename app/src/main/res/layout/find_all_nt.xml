@@ -1,86 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
-    <Button
-        android:id="@+id/bt_all_nt"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="5dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="ค้นหา"
-        android:textColor="@color/common_google_signin_btn_text_dark_default"
-        app:layout_constraintBottom_toTopOf="@+id/List_all_nt"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/autoComp_no"
-        app:layout_constraintTop_toBottomOf="@+id/autoComp_type"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="10dp" />
+    android:layout_height="match_parent"
+    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_type"
         android:layout_width="102dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:hint="ชนิด"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/autoComp_line"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="UnknownId"
-        android:completionThreshold="1"/>
-
-    <ListView
-        android:id="@+id/List_all_nt"
-        android:layout_width="350dp"
-        android:layout_height="355dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_alignBaseline="@+id/autoComp_line"
+        android:layout_alignBottom="@+id/autoComp_line"
+        android:layout_alignEnd="@+id/List_all_nt"
+        android:layout_alignRight="@+id/List_all_nt"
         android:completionThreshold="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.2"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:hint="ชนิด" />
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_line"
         android:layout_width="235dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:hint="ขบวน"
-        app:layout_constraintBottom_toTopOf="@+id/autoComp_no"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8"
+        android:layout_alignLeft="@+id/autoComp_no"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/autoComp_no"
+        android:layout_marginTop="13dp"
         android:completionThreshold="1"
-        android:layout_marginLeft="16dp" />
+        android:hint="ขบวน" />
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_no"
-        android:layout_width="240dp"
+        android:layout_width="245dp"
         android:layout_height="46dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="68dp"
-        android:hint="เลข/ขบวนที่ต้องการค้นหา"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp"
-        android:completionThreshold="1"/>
+        android:layout_alignLeft="@+id/List_all_nt"
+        android:layout_alignStart="@+id/List_all_nt"
+        android:layout_below="@+id/autoComp_type"
+        android:completionThreshold="1"
+        android:hint="เลข/ขบวนที่ต้องการค้นหา" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/bt_all_nt"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/autoComp_no"
+        android:layout_alignBottom="@+id/autoComp_no"
+        android:layout_alignEnd="@+id/autoComp_type"
+        android:layout_alignRight="@+id/autoComp_type"
+        android:backgroundTint="@color/colorPrimary"
+        android:text="ค้นหา"
+        android:textColor="@color/common_google_signin_btn_text_dark_default" />
+
+    <ListView
+        android:id="@+id/List_all_nt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/bt_all_nt"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
