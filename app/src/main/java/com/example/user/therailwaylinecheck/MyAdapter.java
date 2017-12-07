@@ -1,6 +1,7 @@
 package com.example.user.therailwaylinecheck;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,11 +25,11 @@ public class MyAdapter extends ArrayAdapter {
             mContext = context;
             mLayout = layout;
             mArrayList = arrayList;
-      }
+     }
 
       //ต้องโอเวอร์ไรด์เมธอด getView() ของคลาส ArrayAdapter เพื่อกำหนดข้อมูลให้กับรายการของ ListView แทนวิธีปกติ
       @Override
-      public View getView(int position, View convertView, ViewGroup parent) {
+     public View getView(int position, View convertView, ViewGroup parent) {
             //สร้าง Inflater เพื่อกระจายโครงสร้างของ XML ให้เป็นออบเจ็กต์ของจาวา
             View rowView = convertView;
             if(rowView == null) {
@@ -46,23 +47,37 @@ public class MyAdapter extends ArrayAdapter {
             TextView textViewLine4 = (TextView) rowView.findViewById(R.id.mtime);
             //อ่านข้อมูลบรรทัดที่ 1 ที่เรากำหนดให้แก่คลาส MyItem จากเมธอด getTextLine1()
             //นำข้อมูลที่ได้ไปกำหนดเป็นข้อมูลบรรทัดแรกของรายการในลำดับนั้น (position)
+          final String train_no,train_name,train_type;
 
-            String textLine1 = mArrayList.get(position).getmStation();
-            textViewLine1.setText(textLine1);
+          String textLine1 = mArrayList.get(position).getmStation();
+          textViewLine1.setText(textLine1);
+          train_name = textViewLine1.getText().toString();
+
 
           String textLine2 = mArrayList.get(position).getmNumTrain();
           textViewLine2.setText(textLine2);
+          train_no = textViewLine2.getText().toString();
 
           String textLine3 = mArrayList.get(position).getmTrainType();
           textViewLine3.setText(textLine3);
+          train_type = textViewLine3.getText().toString();
 
           String textLine4 = mArrayList.get(position).getMtime();
           textViewLine4.setText(textLine4);
 
+          textViewLine1.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  Intent intent = new Intent(getContext(), TableListTrainSt.class);
+                  intent.putExtra("train_name",train_name);
+                  intent.putExtra("train_no",train_no);
+                  intent.putExtra("train_type",train_type);
 
+                  mContext.startActivity(intent);
+              }
+          });
 
-
-            return rowView; //ส่งรายการของ ListView แถวนั้นกลับไป
-      }
+          return rowView; //ส่งรายการของ ListView แถวนั้นกลับไป
+     }
 
 }

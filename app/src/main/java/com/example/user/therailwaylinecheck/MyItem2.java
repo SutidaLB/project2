@@ -8,6 +8,7 @@ public class MyItem2 {
     private String mNumTrain2;
     private String mTrainType2;
     private String mtime2;
+
     private String mStation3;
     private String mNumTrain3;
     private String mTrainType3;

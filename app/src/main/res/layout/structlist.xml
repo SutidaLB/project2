@@ -23,7 +23,7 @@
         android:layout_marginTop="21dp" />
 
     <TextView
-        android:id="@+id/Dstation"
+        android:id="@+id/train"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -36,7 +36,7 @@
         android:id="@+id/to"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/Dstation"
+        android:layout_below="@+id/train"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
         android:text=" ไปยัง "
@@ -49,8 +49,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/to"
         android:layout_alignTop="@+id/to"
-        android:layout_toLeftOf="@+id/Dstation"
-        android:layout_toStartOf="@+id/Dstation"
+        android:layout_toLeftOf="@+id/train"
+        android:layout_toStartOf="@+id/train"
         android:text=" - "
         android:textColor="@color/colorPrimary"
         android:textSize="17sp" />
@@ -61,8 +61,8 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/to"
         android:layout_alignTop="@+id/to"
-        android:layout_toEndOf="@+id/Dstation"
-        android:layout_toRightOf="@+id/Dstation"
+        android:layout_toEndOf="@+id/train"
+        android:layout_toRightOf="@+id/train"
         android:text=" - "
         android:textColor="@color/colorPrimary"
         android:textSize="17sp" />

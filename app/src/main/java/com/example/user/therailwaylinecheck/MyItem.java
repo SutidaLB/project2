@@ -12,13 +12,10 @@ public class MyItem {
 
       //คอนสตรักเตอร์ เพื่อรับข้อมูลเข้ามาในคลาส
       public MyItem(String Station,String NumTrain,String TrainType,String time) {
-
-
-          mStation = Station;
+         mStation = Station;
          mNumTrain = NumTrain;
          mTrainType = TrainType;
          mtime = time;
-
       }
 
     public String getmStation() {

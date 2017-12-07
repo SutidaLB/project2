@@ -45,18 +45,16 @@
     <ListView
         android:id="@+id/List_all_nt"
         android:layout_width="350dp"
-        android:layout_height="127dp"
+        android:layout_height="355dp"
         android:layout_marginBottom="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="16dp"
+        android:completionThreshold="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        android:completionThreshold="1"
-        android:layout_marginRight="8dp"
-        android:layout_marginLeft="16dp" />
+        tools:ignore="MissingConstraints" />
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_line"

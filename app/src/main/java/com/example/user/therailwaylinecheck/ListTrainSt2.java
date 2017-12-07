@@ -19,7 +19,7 @@ public class ListTrainSt2 extends AppCompatActivity {
       String Junction = "กรุงเทพ",St_Pachee = "ชุมทางบ้านภาชี",St_Pladuk = "ชุมทางหนองปลาดุก";
       String St_bkk;
       int num1=0,num2=0,num=0,num3=0,num0=0,num_st1=0,num_st2=0;
-      String Stmp,Ntmp;
+      String Stmp,Ntmp,Statustmp;
 
       String Station1,Station2,NumTrain,TrainType,NumTrainType,time;
       int Station1_id,Station2_id,Station_bkk_id;
@@ -63,6 +63,7 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] NumTrain = new String[result_route3.size()];
             String[] NumTrainType = new String[result_route3.size()];
             String[] Train_line = new String[result_route3.size()];
+            String[] Status = new String[result_route3.size()];
 
             // Station
             String[] Station_St = new String[result_route4.size()];
@@ -73,10 +74,6 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] arrived = new String[result_route5.size()];
             String[] departed = new String[result_route5.size()];
             String[] sort = new String[result_route5.size()];
-
-            String[] main_st_id = new String[238];
-            String[] main_route_id = new String[238];
-            String[] main_route_no = new String[238];
 
             for(int i = 0;i<result_route5.size();i++){
 
@@ -106,6 +103,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                   NumTrain[i] = result_route3.get(i).get("train_no");
                   NumTrainType[i] = result_route3.get(i).get("train_type");
                   Train_line[i] = result_route3.get(i).get("train_line");
+                  Status[i] = result_route3.get(i).get("status");
             }
 
             // ส่วนของ  Algor การหาทางผ่านแต่ละชุมทาง
@@ -189,6 +187,7 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] arrived1_tmp = new String[num1];
             String[] departed1_tmp = new String[num1];
             String[] sort1_tmp = new String[num1];
+            //String[] status1_tmp = new String[num1];
 
             String[] Station_id_bkk = new String[num3];
             String[] route_id_bkk = new String[num3];
@@ -196,6 +195,7 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] arrived_bkk = new String[num3];
             String[] departed_bkk = new String[num3];
             String[] sort_bkk = new String[num3];
+            //String[] status_bkk = new String[num3];
 
             String[] Station2_id_tmp = new String[num2];
             String[] route2_id_tmp = new String[num2];
@@ -203,6 +203,7 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] arrived2_tmp = new String[num2];
             String[] departed2_tmp = new String[num2];
             String[] sort2_tmp = new String[num2];
+            //String[] status2_tmp = new String[num2];
 
             // เทียบต้นทางกับ กรุงเทพ
             num1=0;num2=0;num3=0;
@@ -214,6 +215,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                         arrived1_tmp[num1] = arrived[i];
                         departed1_tmp[num1] = departed[i];
                         sort1_tmp[num1] = sort[i];
+                        //status1_tmp[num1] = Status[i];
                         num1++;
                   }
                   if(Integer.parseInt(Station_id[i])== Station2_id){
@@ -223,6 +225,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                         arrived2_tmp[num2] = arrived[i];
                         departed2_tmp[num2] = departed[i];
                         sort2_tmp[num2] = sort[i];
+                        //status2_tmp[num2] = Status[i];
                         num2++;
                   }
                   if(Integer.parseInt(Station_id[i])== Station_bkk_id){
@@ -232,6 +235,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                         arrived_bkk[num3] = arrived[i];
                         departed_bkk[num3] = departed[i];
                         sort_bkk[num3] = sort[i];
+                        //status_bkk[num3] = Status[i];
                         num3++;
                   }
             }
@@ -244,10 +248,11 @@ public class ListTrainSt2 extends AppCompatActivity {
                               for(int k=0;k<Station.length;k++){
                                     if(Ntmp.equals(NumTrain[k])){
                                           Stmp = Station[k];
+                                          Statustmp = Status[k];
 
                                     }
                               }
-                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort_bkk[j])) {
+                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort_bkk[j]) && (Integer.parseInt(Statustmp) == 1)){
                                     num++;
                               }
                         }
@@ -260,10 +265,11 @@ public class ListTrainSt2 extends AppCompatActivity {
                               for(int k=0;k<Station.length;k++){
                                     if(Ntmp.equals(NumTrain[k])){
                                           Stmp = Station[k];
+                                          Statustmp = Status[k];
 
                                     }
                               }
-                              if(Integer.parseInt(sort_bkk[i]) < Integer.parseInt(sort2_tmp[j])) {
+                              if(Integer.parseInt(sort_bkk[i]) < Integer.parseInt(sort2_tmp[j]) && (Integer.parseInt(Statustmp) == 1)) {
                                     num0++;
                               }
                         }
@@ -277,6 +283,8 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] Train_type = new String[num];
             String[] arrived_tmp = new String[num];
             String[] departed_tmp = new String[num];
+            String[] status_tmp = new String[num];
+
 
             String[] Station_tmp_1 = new String[num0];
             String[] NumTrain_tmp_1 = new String[num0];
@@ -284,6 +292,9 @@ public class ListTrainSt2 extends AppCompatActivity {
             String[] Train_type_1 = new String[num0];
             String[] arrived_tmp_1 = new String[num0];
             String[] departed_tmp_1 = new String[num0];
+            String[] status_tmp_1 = new String[num0];
+
+
 
             num = 0;
             for(int i=0;i< Station1_id_tmp.length;i++){
@@ -293,10 +304,11 @@ public class ListTrainSt2 extends AppCompatActivity {
                               for(int k=0;k<Station.length;k++){
                                     if(Ntmp.equals(NumTrain[k])){
                                           Stmp = Station[k];
+                                          Statustmp = Status[k];
 
                                     }
                               }
-                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort_bkk[j])){
+                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort_bkk[j]) && (Integer.parseInt(Statustmp) == 1)){
                                     NumTrain_tmp[num] = Ntmp;
 
                                     Station_tmp[num] = Stmp;
@@ -321,9 +333,10 @@ public class ListTrainSt2 extends AppCompatActivity {
                               for(int k=0;k<Station.length;k++){
                                     if(Ntmp.equals(NumTrain[k])){
                                           Stmp = Station[k];
+                                          Statustmp = Status[k];
                                     }
                               }
-                              if(Integer.parseInt(sort_bkk[i]) < Integer.parseInt(sort2_tmp[j])){
+                              if(Integer.parseInt(sort_bkk[i]) < Integer.parseInt(sort2_tmp[j]) && (Integer.parseInt(Statustmp) == 1)){
                                     NumTrain_tmp_1[num0] = Ntmp;
 
                                     Station_tmp_1[num0] = Stmp;
@@ -342,6 +355,17 @@ public class ListTrainSt2 extends AppCompatActivity {
 
             //จบส่วนของการค้นหาสถานี
 
+            // ส่วนของการต่อเวลา อิอิ
+
+
+
+
+
+
+
+
+
+            // จบส่วนการต่อเวลา อิอิ
             ///// End Pull Database  //////////////
 
             ArrayList<MyItem2> items = new ArrayList<>();
@@ -349,17 +373,17 @@ public class ListTrainSt2 extends AppCompatActivity {
             line1 = "Test";
             if(Station_tmp.length < Station_tmp_1.length){
                   for(int i = 1; i <= Station_tmp.length; i++) {
-                        items.add(new MyItem2(i + ": "+Station_tmp[i-1],""+NumTrain_tmp[i-1],""+TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],
+                        items.add(new MyItem2(i + ":"+Station_tmp[i-1],""+NumTrain_tmp[i-1],""+TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],
                                 departed_tmp[i-1] + " - " + arrived_tmp[i-1]
-                                ,i + ": "+Station_tmp_1[i-1],""+NumTrain_tmp_1[i-1],""+TrainType[Integer.parseInt(NumTrainType_tmp_1[i-1])-1],
+                                ,i + ":"+Station_tmp_1[i-1],""+NumTrain_tmp_1[i-1],""+TrainType[Integer.parseInt(NumTrainType_tmp_1[i-1])-1],
                                 departed_tmp_1[i-1] + " - " + arrived_tmp_1[i-1]));
                   }
             }
             else {
                   for (int i = 1; i <= Station_tmp_1.length; i++) {
-                        items.add(new MyItem2(i + ": " + Station_tmp[i - 1], "" + NumTrain_tmp[i - 1], "" + TrainType[Integer.parseInt(NumTrainType_tmp[i - 1]) - 1],
+                        items.add(new MyItem2(i + ":" + Station_tmp[i - 1], "" + NumTrain_tmp[i - 1], "" + TrainType[Integer.parseInt(NumTrainType_tmp[i - 1]) - 1],
                                 departed_tmp[i - 1] + " - " + arrived_tmp[i - 1]
-                                , i + ": " + Station_tmp_1[i - 1], "" + NumTrain_tmp_1[i - 1], "" + TrainType[Integer.parseInt(NumTrainType_tmp_1[i - 1]) - 1],
+                                , i + ":" + Station_tmp_1[i - 1], "" + NumTrain_tmp_1[i - 1], "" + TrainType[Integer.parseInt(NumTrainType_tmp_1[i - 1]) - 1],
                                 departed_tmp_1[i - 1] + " - " + arrived_tmp_1[i - 1]));
                   }
             }
@@ -375,10 +399,6 @@ public class ListTrainSt2 extends AppCompatActivity {
 
 
       }
-
-
-
-
 
       @Override
       public boolean onCreateOptionsMenu(Menu menu) {

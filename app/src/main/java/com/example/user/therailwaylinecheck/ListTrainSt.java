@@ -17,7 +17,7 @@ import static com.example.user.therailwaylinecheck.R.string.app_name;
 public class ListTrainSt extends AppCompatActivity {
       String station1,station2;
       int num1=0,num2=0,num=0,num3=0;
-      String Stmp,Ntmp;
+      String Stmp,Ntmp,Statustmp;
 
       String Station1,Station2,NumTrain,TrainType,NumTrainType,time;
       int Station1_id,Station2_id;
@@ -52,6 +52,7 @@ public class ListTrainSt extends AppCompatActivity {
             String[] Station = new String[result_route3.size()];
             String[] NumTrain = new String[result_route3.size()];
             String[] NumTrainType = new String[result_route3.size()];
+            String[] Status = new String[result_route3.size()];
 
             String[] Station_St = new String[result_route4.size()];
 
@@ -87,6 +88,8 @@ public class ListTrainSt extends AppCompatActivity {
                   Station[i] = result_route3.get(i).get("name_th");
                   NumTrain[i] = result_route3.get(i).get("train_no");
                   NumTrainType[i] = result_route3.get(i).get("train_type");
+                  Status[i] = result_route3.get(i).get("status");
+
             }
 
             //ส่วนของการค้นหาสถานี ให้ตรงกับที่ INPUT มา
@@ -150,10 +153,11 @@ public class ListTrainSt extends AppCompatActivity {
                               for(int k=0;k<Station.length;k++){
                                     if(Ntmp.equals(NumTrain[k])){
                                           Stmp = Station[k];
+                                          Statustmp = Status[k];
 
                                     }
                               }
-                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j])) {
+                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j]) && Integer.parseInt(Statustmp)==1) {
                                     num++;
                               }
                         }
@@ -174,10 +178,11 @@ public class ListTrainSt extends AppCompatActivity {
                               for(int k=0;k<Station.length;k++){
                                     if(Ntmp.equals(NumTrain[k])){
                                           Stmp = Station[k];
+                                          Statustmp = Status[k];
 
                                     }
                               }
-                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j])){
+                              if(Integer.parseInt(sort1_tmp[i]) < Integer.parseInt(sort2_tmp[j]) && Integer.parseInt(Statustmp)==1){
                                     NumTrain_tmp[num] = Ntmp;
                                     Station_tmp[num] = Stmp;
                                     for(int k=0;k<NumTrain.length;k++){//เพิ่มส่วนแสดง ชนิด รถไฟ Train_Type
@@ -204,14 +209,14 @@ public class ListTrainSt extends AppCompatActivity {
 
             for(int i = 1; i <= Station_tmp.length; i++) {
 
-                  items.add(new MyItem(i+ ":  "+Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
+                  items.add(new MyItem(i+ ": "+Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
             }
 
            //s1.setText("---"+ Station1 + "---" + Stmp + "---");
             //s1.setText(t[0].replaceAll(".*-", "")); // วิธีตัดคำข้างหน้าออก
             //s1.setText(t[0].split("-")[0]); // วิธีตัดคำข้างหลังออก
             //ใช้ MyAdapter ที่เราสร้างขึ้น  แทนคลาส ArrayAdapter ที่เคยใช้ตามปกติ
-            MyAdapter adapter = new MyAdapter(getBaseContext(),R.layout.item_layout, items);
+            MyAdapter adapter = new MyAdapter(getBaseContext(),R.layout.item_layout,items);
 
             ListView listView = (ListView)findViewById(R.id.selectst);
             listView.setAdapter(adapter);

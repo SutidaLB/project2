@@ -27,6 +27,7 @@
         android:layout_marginTop="18dp"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp" />
 
     <TextView
@@ -38,6 +39,7 @@
         android:layout_alignTop="@+id/showmtime3"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/colorPrimary"
         android:textSize="16sp" />
 
     <TextView
