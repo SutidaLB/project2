@@ -62,7 +62,6 @@ public class ListTrainSt extends AppCompatActivity {
             String[] departed = new String[result_route5.size()];
             String[] sort = new String[result_route5.size()];
             for(int i = 0;i<result_route5.size();i++){
-
                   Station_id[i] = result_route5.get(i).get("station_id"); //ขบวน
                   route_id[i] = result_route5.get(i).get("route_id");
                   route_no[i] = result_route5.get(i).get("route_no");
@@ -78,20 +77,16 @@ public class ListTrainSt extends AppCompatActivity {
             }
 
             for(int i = 0;i<result_route1.size();i++){
-
                   time[i] = result_route1.get(i).get("name_th"); //ขบวน
             }
             for(int i = 0;i<result_route2.size();i++){
-
                   TrainType[i] = result_route2.get(i).get("name_th"); //ชนิด
-
             }
 
             for(int i = 0;i<result_route3.size();i++){
                   Station[i] = result_route3.get(i).get("name_th");
                   NumTrain[i] = result_route3.get(i).get("train_no");
                   NumTrainType[i] = result_route3.get(i).get("train_type");
-
             }
 
             //ส่วนของการค้นหาสถานี ให้ตรงกับที่ INPUT มา
@@ -106,11 +101,9 @@ public class ListTrainSt extends AppCompatActivity {
 
             for(int i=0;i<Station_id.length;i++){  //นำหมายเลขสถานีที่รับมา นำมาเปรียบเทียบแล้วเก็บค่า Station_id  route_id route_no ทั้ง ต้นทางและปลายทาง
                   if(Station_id[i].equals("" +Station1_id)){
-
                         num1++;
                   }
                   if(Integer.parseInt(Station_id[i])== Station2_id){
-
                         num2++;
                   }
             }
@@ -210,7 +203,7 @@ public class ListTrainSt extends AppCompatActivity {
             //MyItem test = new MyItem(line1);
 
             for(int i = 1; i <= Station_tmp.length; i++) {
-                  
+
                   items.add(new MyItem(i+ ":  "+Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
             }
 

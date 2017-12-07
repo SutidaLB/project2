@@ -20,8 +20,6 @@ public class ListTrainSt2 extends AppCompatActivity {
       String St_bkk;
       int num1=0,num2=0,num=0,num3=0,num0=0,num_st1=0,num_st2=0;
       String Stmp,Ntmp;
-      //public AutoCompleteTextView all_line_train,all_type_train,all_no_train;
-      //public ArrayAdapter<String> adapter_line_nt,adapter_type_nt,adapter_no_nt;
 
       String Station1,Station2,NumTrain,TrainType,NumTrainType,time;
       int Station1_id,Station2_id,Station_bkk_id;
@@ -35,16 +33,7 @@ public class ListTrainSt2 extends AppCompatActivity {
             toolbar.setTitle(app_name);
             setSupportActionBar(toolbar);
 
-            /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-            fab.setOnClickListener(new View.OnClickListener() {
-                  @Override
-                  public void onClick(View view) {
-                        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                  }
-            });*/
             Intent intent = getIntent();
-            //station1 = intent.getExtras().getString("station1");
             station1 = intent.getExtras().getString("station1"); // สถานี 1
             station2 = intent.getExtras().getString("station2"); // สถานี 2
 
@@ -54,7 +43,7 @@ public class ListTrainSt2 extends AppCompatActivity {
             s1.setText(station1);
             s2.setText(station2);
 
-             //  Pull  Database ///////////
+            //  Pull  Database ///////////
             ArrayList<HashMap<String,String>> result_route1 = MysqlConnectoTrain_line.selectAllT_train_line();
 
             ArrayList<HashMap<String,String>> result_route2 = MysqlConnectoTrain_type.selectAllT_train_type();
@@ -100,20 +89,16 @@ public class ListTrainSt2 extends AppCompatActivity {
             }
 
             for(int i = 0;i<result_route4.size();i++){ // Station_table
-
                   Station_St[i] = result_route4.get(i).get("name_th"); //ขบวน
                  // route_id[i] = result_route4.get(i).get("route_id");
                  // route_no[i] = result_route4.get(i).get("route_no");
             }
 
             for(int i = 0;i<result_route1.size();i++){
-
                   time[i] = result_route1.get(i).get("name_th"); //ขบวน
             }
             for(int i = 0;i<result_route2.size();i++){
-
                   TrainType[i] = result_route2.get(i).get("name_th"); //ชนิด
-
             }
 
             for(int i = 0;i<result_route3.size();i++){
@@ -121,7 +106,6 @@ public class ListTrainSt2 extends AppCompatActivity {
                   NumTrain[i] = result_route3.get(i).get("train_no");
                   NumTrainType[i] = result_route3.get(i).get("train_type");
                   Train_line[i] = result_route3.get(i).get("train_line");
-
             }
 
             // ส่วนของ  Algor การหาทางผ่านแต่ละชุมทาง
