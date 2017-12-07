@@ -11,9 +11,9 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="21dp"
         android:text="ลำดับ" />
 
     <TextView
@@ -22,8 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/order"
         android:layout_alignBottom="@+id/order"
-        android:layout_marginLeft="14dp"
-        android:layout_marginStart="14dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginStart="60dp"
         android:layout_toEndOf="@+id/order"
         android:layout_toRightOf="@+id/order"
         android:paddingLeft="10dp"
@@ -36,10 +38,12 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/st"
         android:layout_alignBottom="@+id/st"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_toLeftOf="@+id/departed"
-        android:layout_toStartOf="@+id/departed"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="250dp"
+        android:layout_marginStart="250dp"
+        android:layout_toEndOf="@+id/st"
+        android:layout_toRightOf="@+id/st"
         android:text="เวลาออก" />
 
     <TextView
@@ -50,7 +54,7 @@
         android:layout_alignBottom="@+id/arrived"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
         android:text="เวลาถึง" />
 </RelativeLayout>
