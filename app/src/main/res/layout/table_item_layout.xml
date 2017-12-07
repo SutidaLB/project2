@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable">
+
+    <TextView
+        android:id="@+id/order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="ลำดับ" />
+
+    <TextView
+        android:id="@+id/st"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/order"
+        android:layout_alignBottom="@+id/order"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/order"
+        android:layout_toRightOf="@+id/order"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="สถานี" />
+
+    <TextView
+        android:id="@+id/arrived"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/st"
+        android:layout_alignBottom="@+id/st"
+        android:layout_marginEnd="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_toLeftOf="@+id/departed"
+        android:layout_toStartOf="@+id/departed"
+        android:text="เวลาออก" />
+
+    <TextView
+        android:id="@+id/departed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/arrived"
+        android:layout_alignBottom="@+id/arrived"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:text="เวลาถึง" />
+</RelativeLayout>

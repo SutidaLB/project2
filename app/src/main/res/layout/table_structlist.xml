@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".TableListTrainSt"
+    tools:showIn="@layout/table_listtrainst">
+
+    <TextView
+        android:id="@+id/train"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="ตารางขบวนรถไฟ"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/train_route"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/train"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="ขบวน"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <TextView
+        android:id="@+id/train_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/train_route"
+        android:layout_alignBottom="@+id/train_route"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:text="เลข"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <TextView
+        android:id="@+id/train_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/train_route"
+        android:layout_alignBottom="@+id/train_route"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
+        android:text="ประเภท"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/train_no"
+        android:layout_alignRight="@+id/train_no"
+        android:layout_below="@+id/train_no"
+        android:layout_marginTop="16dp"
+        android:text="ลำดับ"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView11"
+        android:layout_alignBottom="@+id/textView11"
+        android:layout_alignLeft="@+id/train"
+        android:layout_alignStart="@+id/train"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:text="สถานี"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/train_type"
+        android:layout_alignRight="@+id/train_type"
+        android:layout_alignTop="@+id/textView12"
+        android:text="เวลาถึง"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textView13"
+        android:layout_alignBottom="@+id/textView13"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/train_route"
+        android:layout_toRightOf="@+id/train_route"
+        android:text="เวลาออก"
+        android:textColor="@color/colorPrimaryDark" />
+
+    <ListView
+        android:id="@+id/list_show_table"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView11"
+        android:layout_marginTop="12dp" />
+
+
+</RelativeLayout>
