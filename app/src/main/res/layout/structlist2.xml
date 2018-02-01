@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:text="เดินทางจาก"
+        android:text="@string/st_from"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="17sp" />
 
@@ -39,7 +39,7 @@
         android:layout_below="@+id/station"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp"
-        android:text=" ไปยัง "
+        android:text="@string/st_to"
         android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="16sp" />
 
@@ -51,7 +51,7 @@
         android:layout_alignTop="@+id/to"
         android:layout_toLeftOf="@+id/station"
         android:layout_toStartOf="@+id/station"
-        android:text=" - "
+        android:text="@string/point"
         android:textColor="@color/colorPrimary"
         android:textSize="17sp" />
 
@@ -63,7 +63,7 @@
         android:layout_alignTop="@+id/to"
         android:layout_toEndOf="@+id/station"
         android:layout_toRightOf="@+id/station"
-        android:text=" - "
+        android:text="@string/point"
         android:textColor="@color/colorPrimary"
         android:textSize="17sp" />
 

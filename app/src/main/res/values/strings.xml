@@ -4,4 +4,44 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_find_all_st">find_all_st</string>
     <string name="title_activity_find__all__station">Find_All_Station</string>
+    <string name="bt_search">ค้นหา</string>
+    <!-- string in frag3 -->
+    <string name="frag3_line1">ติดต่อสอบถาม</string>
+    <string name="frag3_line2">โทร : 1690 ศูนย์บริการลูกค้าการรถไฟไทย</string>
+    <!-- string in frag2 -->
+    <string name="frag2_select_list">เลือกรายการที่คุณต้องการค้นหา</string>
+    <string name="frag2_ok">ตกลง</string>
+    <!-- string in frag2 -->
+    <string name="frag1_find_station">เริ่มค้นหาเส้นทาง</string>
+    <string name="frag1_from">เดินทางจาก :</string>
+    <string name="frag1_to">ไปยัง :</string>
+    <string name="frag1_from_st">  (ระบุสถานีต้นทาง)</string>
+    <string name="frag1_to_st">  (ระบุสถานีปลายทาง)</string>
+    <string name="frag1_search2">ต่อสถานี</string>
+    <!-- in find_all_st -->
+    <string name="search_st">สถานีที่ต้องการค้นหา</string>
+    <!-- in find_all_nt -->
+    <string name="type_train">ชนิด</string>
+    <string name="num_train">ขบวน</string>
+    <string name="name_num">เลข/ขบวนที่ต้องการค้นหา</string>
+    <!-- in structlist -->
+    <string name="st_from">เดินทางจาก</string>
+    <string name="st_to"> ไปยัง </string>
+    <string name="point"> - </string>
+    <!-- in table_structlist&table_item_layout -->
+    <string name="train_table">ตารางขบวนรถไฟ</string>
+    <string name="train_line">ขบวน</string>
+    <string name="train_type">ประเภท</string>
+    <string name="num">เลข</string>
+    <string name="train_num">ขบวนที่</string>
+    <string name="order">ลำดับ</string>
+    <string name="train_st">สถานี</string>
+    <string name="time_arriv">เวลาออก</string>
+    <string name="time_depart">เวลาถึง</string>
+    <!-- in item_layout -->
+    <string name="time">เวลาออก-เวลาถึง</string>
+    <string name="show_num_train">เลขขบวนรถไฟ</string>
+    <string name="price">ราคาบัตร</string>
+    <string name="type">ประเภทรถไฟ</string>
+
 </resources>

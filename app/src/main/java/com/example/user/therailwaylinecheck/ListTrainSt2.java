@@ -8,7 +8,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -21,7 +20,7 @@ public class ListTrainSt2 extends AppCompatActivity {
       int num1=0,num2=0,num=0,num3=0,num0=0,num_st1=0,num_st2=0;
       String Stmp,Ntmp,Statustmp;
 
-      String Station1,Station2,NumTrain,TrainType,NumTrainType,time;
+      //String Station1,Station2,NumTrain,TrainType,NumTrainType,time;
       int Station1_id,Station2_id,Station_bkk_id;
       String St1_route_no,St2_route_no;
       String St1_line,St2_line;
@@ -396,7 +395,6 @@ public class ListTrainSt2 extends AppCompatActivity {
 
             ListView listView = (ListView)findViewById(R.id.selectst2);
             listView.setAdapter(adapter);
-
 
       }
 

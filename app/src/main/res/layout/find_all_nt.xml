@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:targetApi="lollipop">
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_type"
@@ -18,7 +20,7 @@
         android:layout_alignEnd="@+id/List_all_nt"
         android:layout_alignRight="@+id/List_all_nt"
         android:completionThreshold="1"
-        android:hint="ชนิด" />
+        android:hint="@string/type_train" />
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_line"
@@ -29,7 +31,7 @@
         android:layout_alignStart="@+id/autoComp_no"
         android:layout_marginTop="13dp"
         android:completionThreshold="1"
-        android:hint="ขบวน" />
+        android:hint="@string/num_train" />
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_no"
@@ -39,7 +41,7 @@
         android:layout_alignStart="@+id/List_all_nt"
         android:layout_below="@+id/autoComp_type"
         android:completionThreshold="1"
-        android:hint="เลข/ขบวนที่ต้องการค้นหา" />
+        android:hint="@string/name_num" />
 
     <Button
         android:id="@+id/bt_all_nt"
@@ -50,7 +52,7 @@
         android:layout_alignEnd="@+id/autoComp_type"
         android:layout_alignRight="@+id/autoComp_type"
         android:backgroundTint="@color/colorPrimary"
-        android:text="ค้นหา"
+        android:text="@string/bt_search"
         android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
     <ListView

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable">
+    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable"
+    tools:targetApi="lollipop">
 
     <TextView
         android:id="@+id/mtime"
@@ -14,8 +16,8 @@
         android:layout_alignRight="@+id/mticked"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:text="เวลาออก-เวลาถึง"
-        android:textSize="12sp" />
+        android:text="@string/time"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/Station"
@@ -28,7 +30,7 @@
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorPrimary"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/NumTrain"
@@ -39,8 +41,8 @@
         android:layout_alignTop="@+id/mticked"
         android:layout_marginLeft="13dp"
         android:layout_marginStart="13dp"
-        android:text="เลขขบวนรถไฟ"
-        android:textSize="14sp" />
+        android:text="@string/show_num_train"
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/mticked"
@@ -53,9 +55,9 @@
         android:layout_marginRight="11dp"
         android:layout_marginTop="19dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="ราคาบัตร"
+        android:text="@string/price"
         android:textColor="@android:color/background_light"
-        android:textSize="10sp" />
+        android:textSize="13sp" />
 
     <TextView
         android:id="@+id/TrainType"
@@ -64,7 +66,7 @@
         android:layout_alignBottom="@+id/mticked"
         android:layout_alignLeft="@+id/NumTrain"
         android:layout_alignStart="@+id/NumTrain"
-        android:text="ประเถทรถไฟ"
-        android:textSize="12sp" />
+        android:text="@string/type"
+        android:textSize="13sp" />
 
 </RelativeLayout>

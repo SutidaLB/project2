@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable">
+    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable"
+    tools:targetApi="lollipop">
 
     <TextView
         android:id="@+id/showmtime2"
@@ -14,8 +16,8 @@
         android:layout_alignRight="@+id/showmticked2"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
-        android:text="เวลาออก-เวลาถึง"
-        android:textSize="12sp" />
+        android:text="@string/time"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/showStation2"
@@ -28,7 +30,7 @@
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorPrimary"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/showStation3"
@@ -40,7 +42,7 @@
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textColor="@color/colorPrimary"
-        android:textSize="16sp" />
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/showNumTrain2"
@@ -48,11 +50,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/showmticked2"
-        android:layout_marginLeft="13dp"
-        android:layout_marginStart="13dp"
-        android:text="เลขขบวนรถไฟ"
-        android:textSize="14sp" />
+        android:layout_below="@+id/showStation2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:text="@string/show_num_train"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/showNumTrain3"
@@ -60,9 +62,9 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/showStation3"
         android:layout_alignStart="@+id/showStation3"
-        android:layout_alignTop="@+id/showmticked3"
-        android:text="เลขขบวนรถไฟ"
-        android:textSize="14sp" />
+        android:layout_below="@+id/showStation3"
+        android:text="@string/show_num_train"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/showmticked2"
@@ -70,14 +72,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/showStation2"
+        android:layout_below="@+id/showmtime2"
         android:layout_marginEnd="11dp"
         android:layout_marginRight="11dp"
-        android:layout_marginTop="19dp"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="ราคาบัตร"
+        android:text="@string/price"
         android:textColor="@android:color/background_light"
-        android:textSize="10sp" />
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/showmticked3"
@@ -85,12 +86,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/showmticked2"
         android:layout_alignStart="@+id/showmticked2"
-        android:layout_below="@+id/showmtime3"
-        android:layout_marginTop="19dp"
+        android:layout_alignTop="@+id/showNumTrain3"
         android:backgroundTint="@android:color/holo_blue_dark"
-        android:text="ราคาบัตร"
+        android:text="@string/price"
         android:textColor="@android:color/background_light"
-        android:textSize="10sp" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/showTrainType2"
@@ -99,8 +99,8 @@
         android:layout_above="@+id/showmtime3"
         android:layout_alignLeft="@+id/showNumTrain2"
         android:layout_alignStart="@+id/showNumTrain2"
-        android:text="ประเถทรถไฟ"
-        android:textSize="12sp" />
+        android:text="@string/type"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/showTrainType3"
@@ -109,8 +109,8 @@
         android:layout_alignBottom="@+id/showmticked3"
         android:layout_alignLeft="@+id/showNumTrain3"
         android:layout_alignStart="@+id/showNumTrain3"
-        android:text="ประเถทรถไฟ"
-        android:textSize="12sp" />
+        android:text="@string/type"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/showmtime3"
@@ -120,7 +120,7 @@
         android:layout_alignStart="@+id/showmtime2"
         android:layout_below="@+id/showmticked2"
         android:layout_marginTop="21dp"
-        android:text="เวลาออก-เวลาถึง"
-        android:textSize="12sp" />
+        android:text="@string/time"
+        android:textSize="18sp" />
 
 </RelativeLayout>
