@@ -92,6 +92,7 @@ public class ListTrainSt extends AppCompatActivity {
 
             }
 
+
             //ส่วนของการค้นหาสถานี ให้ตรงกับที่ INPUT มา
             for(int i=0;i<Station_St.length;i++){  // บันทึกหมายเลขสถานี
                   if(Station_St[i].equals(station1)){
@@ -101,6 +102,10 @@ public class ListTrainSt extends AppCompatActivity {
                         Station2_id = i+1;
                   }
             }
+            // End //
+
+
+
 
             for(int i=0;i<Station_id.length;i++){  //นำหมายเลขสถานีที่รับมา นำมาเปรียบเทียบแล้วเก็บค่า Station_id  route_id route_no ทั้ง ต้นทางและปลายทาง
                   if(Station_id[i].equals("" +Station1_id)){
@@ -110,6 +115,9 @@ public class ListTrainSt extends AppCompatActivity {
                         num2++;
                   }
             }
+
+
+
             String[] Station1_id_tmp = new String[num1];
             String[] route1_id_tmp = new String[num1];
             String[] route1_on_tmp = new String[num1];
@@ -209,7 +217,7 @@ public class ListTrainSt extends AppCompatActivity {
 
             for(int i = 1; i <= Station_tmp.length; i++) {
 
-                  items.add(new MyItem(i+ ": "+Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1]));
+                  items.add(new MyItem(i+ ": "+Station_tmp[i-1],NumTrain_tmp[i-1],TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],departed_tmp[i-1] + " - " + arrived_tmp[i-1],station1,station2));
             }
 
            //s1.setText("---"+ Station1 + "---" + Stmp + "---");

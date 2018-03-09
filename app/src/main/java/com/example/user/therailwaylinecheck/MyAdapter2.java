@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -53,6 +54,11 @@ public class MyAdapter2 extends ArrayAdapter {
             //นำข้อมูลที่ได้ไปกำหนดเป็นข้อมูลบรรทัดแรกของรายการในลำดับนั้น (position)
           final String train_no1,train_name1,train_type1;
           final String train_no2,train_name2,train_type2;
+          final String Source,MidStation,Dest;
+
+          Source = mArrayList.get(position).getmSource();
+          MidStation = mArrayList.get(position).getmMidStation();
+          Dest = mArrayList.get(position).getmDest();
 
 
           String textLine1 = mArrayList.get(position).getmStation2();
@@ -91,6 +97,8 @@ public class MyAdapter2 extends ArrayAdapter {
           String textLine8 = mArrayList.get(position).getMtime3();
           textViewLine8.setText(textLine8);
 
+          Button price1 = (Button)rowView.findViewById(R.id.showmticked2);
+          Button price2 = (Button)rowView.findViewById(R.id.showmticked3);
 
 
           textViewLine1.setOnClickListener(new View.OnClickListener() {
@@ -114,6 +122,26 @@ public class MyAdapter2 extends ArrayAdapter {
                   mContext.startActivity(intent);
               }
           });
+
+           price1.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   String webUrl ="http://www.railway.co.th/Ticket/CheckPrice_TrainGo.asp?Sta=" + Source + "&Fin=" +MidStation + "&IdTrain=" +train_no1 + "&NFee=" +train_type1;;
+                   Intent intent = new Intent(getContext(), Price.class);
+                   intent.putExtra("webUrl",webUrl);
+                   mContext.startActivity(intent);
+               }
+           });
+          price2.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  String webUrl ="http://www.railway.co.th/Ticket/CheckPrice_TrainGo.asp?Sta=" + MidStation + "&Fin=" + Dest + "&IdTrain=" +train_no2 + "&NFee=" +train_type2;;
+                  Intent intent = new Intent(getContext(), Price.class);
+                  intent.putExtra("webUrl",webUrl);
+                  mContext.startActivity(intent);
+              }
+          });
+
           return rowView; //ส่งรายการของ ListView แถวนั้นกลับไป
       }
 

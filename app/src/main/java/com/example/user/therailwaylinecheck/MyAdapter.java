@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ public class MyAdapter extends ArrayAdapter {
       private Context mContext;
       private ArrayList<MyItem> mArrayList;
       private int mLayout;
+
 
       //คอนสตรักเตอร์สำหรับรับข้อมูลเข้ามาในคลาส
       //MyItem คือคลาสที่สร้างไว้ในขั้นตอนก่อนนี้ โดยข้อมูลต่างๆ จะถูกกำหนดให้แก่คลาส MyItem
@@ -47,7 +49,7 @@ public class MyAdapter extends ArrayAdapter {
             TextView textViewLine4 = (TextView) rowView.findViewById(R.id.mtime);
             //อ่านข้อมูลบรรทัดที่ 1 ที่เรากำหนดให้แก่คลาส MyItem จากเมธอด getTextLine1()
             //นำข้อมูลที่ได้ไปกำหนดเป็นข้อมูลบรรทัดแรกของรายการในลำดับนั้น (position)
-          final String train_no,train_name,train_type;
+          final String train_no,train_name,train_type,station1,station2;
 
           String textLine1 = mArrayList.get(position).getmStation();
           textViewLine1.setText(textLine1);
@@ -65,6 +67,9 @@ public class MyAdapter extends ArrayAdapter {
           String textLine4 = mArrayList.get(position).getMtime();
           textViewLine4.setText(textLine4);
 
+          station1 = mArrayList.get(position).getmSource();
+          station2 = mArrayList.get(position).getmDest();
+
           textViewLine1.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
@@ -74,6 +79,16 @@ public class MyAdapter extends ArrayAdapter {
                   intent.putExtra("train_type",train_type);
 
                   mContext.startActivity(intent);
+              }
+          });
+          Button button = (Button)rowView.findViewById(R.id.mticked);
+          button.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                  String webUrl = "http://www.railway.co.th/Ticket/CheckPrice_TrainGo.asp?Sta=" + station1 + "&Fin=" +station2 + "&IdTrain=" +train_no + "&NFee=" +train_type;
+                  Intent intentweb = new Intent(getContext(), Price.class);
+                  intentweb.putExtra("webUrl",webUrl);
+                  mContext.startActivity(intentweb);
               }
           });
 

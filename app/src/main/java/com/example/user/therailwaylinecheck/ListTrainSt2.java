@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 import android.widget.TextView;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -86,8 +87,8 @@ public class ListTrainSt2 extends AppCompatActivity {
 
             for(int i = 0;i<result_route4.size();i++){ // Station_table
                   Station_St[i] = result_route4.get(i).get("name_th"); //ขบวน
-                 // route_id[i] = result_route4.get(i).get("route_id");
-                 // route_no[i] = result_route4.get(i).get("route_no");
+                  // route_id[i] = result_route4.get(i).get("route_id");
+                  // route_no[i] = result_route4.get(i).get("route_no");
             }
 
             for(int i = 0;i<result_route1.size();i++){
@@ -136,7 +137,6 @@ public class ListTrainSt2 extends AppCompatActivity {
                   }
             }
 
-
             if((St1_line.equals("3") && St2_line.equals("5")) || (St1_line.equals("5") && St2_line.equals("3"))) // ภาคใต้ -- ตะวันตก || ตะวันตก---ภาคใต้
             {
                   St_bkk = St_Pladuk;
@@ -145,9 +145,9 @@ public class ListTrainSt2 extends AppCompatActivity {
             {
                   St_bkk = St_Pachee;
             }
-            else  // กรุงเทพมหานคร
+            else
             {
-                  St_bkk = Junction;
+                  St_bkk = Junction;// กรุงเทพมหานคร
             }
 
             // จบส่วน Algor การหาทางผ่านแต่ละชุมทาง
@@ -180,6 +180,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                         num3++;
                   }
             }
+
             String[] Station1_id_tmp = new String[num1];
             String[] route1_id_tmp = new String[num1];
             String[] route1_on_tmp = new String[num1];
@@ -375,7 +376,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                         items.add(new MyItem2(i + ":"+Station_tmp[i-1],""+NumTrain_tmp[i-1],""+TrainType[Integer.parseInt(NumTrainType_tmp[i-1])-1],
                                 departed_tmp[i-1] + " - " + arrived_tmp[i-1]
                                 ,i + ":"+Station_tmp_1[i-1],""+NumTrain_tmp_1[i-1],""+TrainType[Integer.parseInt(NumTrainType_tmp_1[i-1])-1],
-                                departed_tmp_1[i-1] + " - " + arrived_tmp_1[i-1]));
+                                departed_tmp_1[i-1] + " - " + arrived_tmp_1[i-1],station1,St_bkk,station2));
                   }
             }
             else {
@@ -383,7 +384,7 @@ public class ListTrainSt2 extends AppCompatActivity {
                         items.add(new MyItem2(i + ":" + Station_tmp[i - 1], "" + NumTrain_tmp[i - 1], "" + TrainType[Integer.parseInt(NumTrainType_tmp[i - 1]) - 1],
                                 departed_tmp[i - 1] + " - " + arrived_tmp[i - 1]
                                 , i + ":" + Station_tmp_1[i - 1], "" + NumTrain_tmp_1[i - 1], "" + TrainType[Integer.parseInt(NumTrainType_tmp_1[i - 1]) - 1],
-                                departed_tmp_1[i - 1] + " - " + arrived_tmp_1[i - 1]));
+                                departed_tmp_1[i - 1] + " - " + arrived_tmp_1[i - 1],station1,St_bkk,station2));
                   }
             }
 

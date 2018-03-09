@@ -14,9 +14,13 @@ public class MyItem2 {
     private String mTrainType3;
     private String mtime3;
 
+    private String mSource;
+    private String mMidStation;
+    private String mDest;
+
 
     //คอนสตรักเตอร์ เพื่อรับข้อมูลเข้ามาในคลาส
-    public MyItem2(String Station2, String NumTrain2, String TrainType2, String time2,String Station3, String NumTrain3, String TrainType3, String time3) {
+    public MyItem2(String Station2, String NumTrain2, String TrainType2, String time2,String Station3, String NumTrain3, String TrainType3, String time3,String Source,String MidStation,String Dest) {
          mStation2 = Station2;
          mNumTrain2 = NumTrain2;
          mTrainType2 = TrainType2;
@@ -26,6 +30,11 @@ public class MyItem2 {
          mNumTrain3 = NumTrain3;
          mTrainType3 = TrainType3;
          mtime3 = time3;
+
+         mSource = Source;
+         mMidStation = MidStation;
+         mDest = Dest;
+
     }
 
     public String getmStation2() {
@@ -100,5 +109,27 @@ public class MyItem2 {
         this.mtime3 = mtime3;
     }
 
+    public String getmSource() {
+        return mSource;
+    }
 
+    public void setmSource(String mSource) {
+        this.mSource = mSource;
+    }
+
+    public String getmMidStation() {
+        return mMidStation;
+    }
+
+    public void setmMidStation(String mMidStation) {
+        this.mMidStation = mMidStation;
+    }
+
+    public String getmDest() {
+        return mDest;
+    }
+
+    public void setmDest(String mDest) {
+        this.mDest = mDest;
+    }
 }

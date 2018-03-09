@@ -8,14 +8,22 @@ public class MyItem {
       private String mNumTrain;
       private String mTrainType;
       private String mtime;
+      private String mSource;
+      private String mDest;
 
 
-      //คอนสตรักเตอร์ เพื่อรับข้อมูลเข้ามาในคลาส
-      public MyItem(String Station,String NumTrain,String TrainType,String time) {
+
+
+    //คอนสตรักเตอร์ เพื่อรับข้อมูลเข้ามาในคลาส
+      public MyItem(String Station,String NumTrain,String TrainType,String time,String Source,String Dest) {
          mStation = Station;
          mNumTrain = NumTrain;
          mTrainType = TrainType;
          mtime = time;
+
+         mSource = Source;
+         mDest = Dest;
+
       }
 
     public String getmStation() {
@@ -48,5 +56,21 @@ public class MyItem {
 
     public void setMtime(String mtime) {
         this.mtime = mtime;
+    }
+
+    public String getmSource() {
+        return mSource;
+    }
+
+    public void setmSource(String mSource) {
+        this.mSource = mSource;
+    }
+
+    public String getmDest() {
+        return mDest;
+    }
+
+    public void setmDest(String mDest) {
+        this.mDest = mDest;
     }
 }
