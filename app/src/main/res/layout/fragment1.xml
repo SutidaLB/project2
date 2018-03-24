@@ -35,10 +35,10 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/AutoCompTextView2"
+        android:layout_alignBottom="@+id/AutoCompTextView2"
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
-        android:layout_below="@+id/textView3"
-        android:layout_marginTop="40dp"
         android:padding="10dp"
         android:text="@string/frag1_to"
         android:textColor="@android:color/black"
@@ -54,6 +54,7 @@
         android:layout_alignLeft="@+id/AutoCompTextView2"
         android:layout_alignRight="@+id/AutoCompTextView2"
         android:layout_alignStart="@+id/AutoCompTextView2"
+        android:background="@color/primary_light"
         android:completionThreshold="1"
         android:hint="@string/frag1_from_st"
         android:inputType="text"
@@ -74,11 +75,12 @@
         android:layout_marginRight="10dp"
         android:layout_marginStart="120dp"
         android:layout_marginTop="40dp"
+        android:background="@color/primary_light"
+        android:completionThreshold="1"
         android:hint="@string/frag1_to_st"
         android:inputType="text"
         android:textColor="@android:color/darker_gray"
-        android:textSize="18sp"
-        android:completionThreshold="1" />
+        android:textSize="18sp" />
 
 
     <Button
