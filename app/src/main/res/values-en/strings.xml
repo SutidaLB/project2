@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">The railway line check</string>
+    <string name="action_settings">EN/TH</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_find_all_st">find_all_st</string>
+    <string name="title_activity_find__all__station">Find_All_Station</string>
+    <string name="bt_search">search</string>
+    <!-- string in frag3 -->
+    <string name="frag3_line1">Contact</string>
+    <string name="frag3_line2">Tel: 1690 Thai Railway Customer Service Center</string>
+    <!-- string in frag2 -->
+    <string name="frag2_select_list">Select the item you want to search.</string>
+    <string name="frag2_ok">OK</string>
+    <!-- string in frag2 -->
+    <string name="frag1_find_station">Start route search</string>
+    <string name="frag1_from">Origin :</string>
+    <string name="frag1_to">Destination :</string>
+    <string name="frag1_from_st">  (Specify source station)</string>
+    <string name="frag1_to_st">  (Specify destination station)</string>
+    <string name="frag1_search2">ต่อสถานี</string>
+    <!-- in find_all_st -->
+    <string name="search_st">Station to search</string>
+    <!-- in find_all_nt -->
+    <string name="type_train">Type of train</string>
+    <string name="num_train">Region</string>
+    <string name="name_num">Origin - Destination</string>
+    <!-- in structlist -->
+    <string name="st_from">Origin</string>
+    <string name="st_to"> to </string>
+    <string name="point"> - </string>
+    <!-- in table_structlist&table_item_layout -->
+    <string name="train_table">Train Schedule</string>
+    <string name="train_line">Region</string>
+    <string name="train_type">Type of train</string>
+    <string name="num">number</string>
+    <string name="train_num">Train</string>
+    <string name="order">No.</string>
+    <string name="train_st">Station</string>
+    <string name="time_arriv">Departure</string>
+    <string name="time_depart">Arrive</string>
+    <!-- in item_layout -->
+    <string name="time">Dep - Arr</string>
+    <string name="show_num_train">Train No.</string>
+    <string name="price">Price</string>
+    <string name="type">Type of train</string>
+    <!-- in item_layout -->
+    <string name="search_trains">Trains</string>
+    <string name="search_stations">Stations</string>
+    <!-- in tab layout -->
+    <array name="tabs">
+        <item>home</item>
+        <!--<item>detail</item>-->
+        <item>info</item>
+    </array>
+
+    <string name="Upload">Upload</string>
+    <string name="Error">Error</string>
+    <string name="Complete">Complete</string>
+
+</resources>

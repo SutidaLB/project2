@@ -1,45 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:targetApi="lollipop">
+    android:fitsSystemWindows="true">
 
-    <AutoCompleteTextView
-        android:id="@+id/autoCompleteTextView"
-        android:layout_width="245dp"
-        android:layout_height="46dp"
-        android:layout_alignLeft="@+id/List_all_st"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/List_all_st"
-        android:layout_marginTop="12dp"
-        android:completionThreshold="1"
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/actionModeSplitBackground"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <EditText
+        android:id="@+id/searchFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:hint="@string/search_st" />
 
-    <Button
-        android:id="@+id/bt_all_st"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/autoCompleteTextView"
-        android:layout_alignEnd="@+id/List_all_st"
-        android:layout_alignRight="@+id/List_all_st"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/bt_search"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
-
     <ListView
-        android:id="@+id/List_all_st"
+        android:id="@+id/theList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/bt_all_st" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"/>
 
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
+    <!--<AutoCompleteTextView
+           android:id="@+id/autoCompleteTextView"
+           android:layout_width="245dp"
+           android:layout_height="46dp"
+           android:layout_alignLeft="@+id/List_all_st"
+           android:layout_alignParentTop="true"
+           android:layout_alignStart="@+id/List_all_st"
+           android:layout_marginTop="12dp"
+           android:completionThreshold="1"
+           android:hint="@string/search_st" />
+
+       <Button
+           android:id="@+id/bt_all_st"
+           android:layout_width="91dp"
+           android:layout_height="wrap_content"
+           android:layout_alignBottom="@+id/autoCompleteTextView"
+           android:layout_alignEnd="@+id/List_all_st"
+           android:layout_alignRight="@+id/List_all_st"
+           android:backgroundTint="@color/colorPrimary"
+           android:text="@string/bt_search"
+           android:textColor="@color/common_google_signin_btn_text_dark_default" /> -->
+    <!--<ListView
+            android:id="@+id/List_all_st"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/bt_all_st" />-->

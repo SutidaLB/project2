@@ -1,65 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<android.support.design.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="?android:attr/textColorSecondaryInverseNoDisable"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:targetApi="lollipop">
+    android:fitsSystemWindows="true">
 
-    <AutoCompleteTextView
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/actionModeSplitBackground"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+
+    </android.support.design.widget.AppBarLayout>
+
+    <Spinner
         android:id="@+id/autoComp_type"
-        android:layout_width="102dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/autoComp_line"
-        android:layout_alignBottom="@+id/autoComp_line"
-        android:layout_alignEnd="@+id/List_all_nt"
-        android:layout_alignRight="@+id/List_all_nt"
-        android:completionThreshold="1"
-        android:hint="@string/type_train" />
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="60dp"
+        android:layout_weight="1"
+        />
 
-    <AutoCompleteTextView
+    <Spinner
         android:id="@+id/autoComp_line"
-        android:layout_width="235dp"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/autoComp_no"
+        android:layout_width="230dp"
+        android:layout_height="30dp"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/autoComp_no"
-        android:layout_marginTop="13dp"
-        android:completionThreshold="1"
-        android:hint="@string/num_train" />
+        android:layout_marginTop="60dp"
+        android:layout_weight="1"
+         />
 
     <AutoCompleteTextView
         android:id="@+id/autoComp_no"
-        android:layout_width="245dp"
-        android:layout_height="46dp"
-        android:layout_alignLeft="@+id/List_all_nt"
-        android:layout_alignStart="@+id/List_all_nt"
-        android:layout_below="@+id/autoComp_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
         android:completionThreshold="1"
         android:hint="@string/name_num" />
-
-    <Button
-        android:id="@+id/bt_all_nt"
-        android:layout_width="91dp"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/autoComp_no"
-        android:layout_alignBottom="@+id/autoComp_no"
-        android:layout_alignEnd="@+id/autoComp_type"
-        android:layout_alignRight="@+id/autoComp_type"
-        android:backgroundTint="@color/colorPrimary"
-        android:text="@string/bt_search"
-        android:textColor="@color/common_google_signin_btn_text_dark_default" />
 
     <ListView
         android:id="@+id/List_all_nt"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/bt_all_nt"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp" />
 
-</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

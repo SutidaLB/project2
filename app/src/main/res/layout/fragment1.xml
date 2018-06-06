@@ -1,60 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="10dp">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        app:srcCompat="@mipmap/iconcircle" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/imageView2"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="104dp"
         android:padding="5dp"
         android:text="@string/frag1_find_station"
         android:textColor="@android:color/black"
         android:textSize="24sp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:padding="10dp"
-        android:text="@string/frag1_from"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/AutoCompTextView2"
-        android:layout_alignBottom="@+id/AutoCompTextView2"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:padding="10dp"
-        android:text="@string/frag1_to"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
-
     <AutoCompleteTextView
         android:id="@+id/AutoCompTextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView3"
-        android:layout_alignBottom="@+id/textView3"
-        android:layout_alignEnd="@+id/AutoCompTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_alignLeft="@+id/AutoCompTextView2"
-        android:layout_alignRight="@+id/AutoCompTextView2"
         android:layout_alignStart="@+id/AutoCompTextView2"
-        android:background="@color/primary_light"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/rounded_corner"
         android:completionThreshold="1"
         android:hint="@string/frag1_from_st"
         android:inputType="text"
@@ -63,19 +43,12 @@
 
     <AutoCompleteTextView
         android:id="@+id/AutoCompTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_below="@+id/AutoCompTextView1"
-        android:layout_marginEnd="10dp"
-        android:layout_marginLeft="120dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="40dp"
-        android:background="@color/primary_light"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:background="@drawable/rounded_corner"
         android:completionThreshold="1"
         android:hint="@string/frag1_to_st"
         android:inputType="text"
@@ -85,12 +58,33 @@
 
     <Button
         android:id="@+id/Button1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/AutoCompTextView2"
+        android:layout_alignStart="@+id/AutoCompTextView2"
         android:layout_below="@+id/AutoCompTextView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="52dp"
-        android:drawableLeft="@android:drawable/ic_menu_search"
-        android:text="@string/bt_search" />
+        android:layout_marginTop="11dp"
+        android:background="@drawable/btn_rounded_corner"
+        android:text="@string/bt_search"
+        android:textColor="@color/common_google_signin_btn_text_dark_default"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonTh"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/iconth" />
+
+    <Button
+        android:id="@+id/buttonEn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/buttonTh"
+        android:layout_toStartOf="@+id/buttonTh"
+        android:background="@drawable/iconen" />
 
 </RelativeLayout>

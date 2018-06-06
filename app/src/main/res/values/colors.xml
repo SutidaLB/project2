@@ -10,6 +10,7 @@
     <color name="accent">#FFC107</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#757575</color>
-    <color name="icons">#FFFFFF</color>
+    <color name="icons">#FE6869</color>
     <color name="divider">#bdbdbd</color>
+    <color name="f">#DAF1FF</color>
 </resources>
